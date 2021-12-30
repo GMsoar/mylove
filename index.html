@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>和陈小薇的美好时光</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2020—05-03,</span><br />
+			<span class="space"/><span class="comments">*2022-01-01.</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Boy name = <span class="keyword">Mr</span> GeMin<br />
+			Girl name = <span class="keyword">Mrs</span> ChenWei<br />
+			<span class="comments">// 亲爱的陈小薇大美女. </span><br />
+			这是陪你度过的第二个生日;<br />
+			<span class="comments">// 能够遇见你，对我来说是最大的幸福.</span><br />
+			有时任性、有时柔弱，脾气臭得时候可以爆发成火山、脾气温和的时候也可以是潺潺溪水;<br />
+			<span class="comments">// 这就是真实的你，也是我所喜欢着、所爱着的你.</span><br />
+			有了你，我的生活变得绚丽多彩，有了你世界变得如此迷人;<br />
+			<span class="comments">// 你是我的世界，我的世界是你，目光所至皆是你.</span><br />
+			我愿意用自己的一生，好好的陪着你，爱着你;<br />
+			<span class="comments">// 陪你到你想去的地方，用心走完我们人生余下的漫长的旅程.</span><br />
+			<span class="comments">// 在未来的日子里，也许什么都不能确定.</span><br />
+			<span class="keyword">但唯一可以确定的是,</span><span class="keyword">我爱的人是你</span>;<br />
+			<span class="keyword">无论狂风</span><span class="keyword">无论暴雨</span>;<br />
+			<span class="placeholder"/><span class="comments">// 我会珍惜和你在一起的每一秒、每一分、每一刻</span><br />
+			<span class="placeholder"/><span class="comments">// 今年的生日我就不给你写贺卡啦.</span><br />
+			<span class="placeholder"/>就以这种形式表白你吧;<br />
+			<span class="comments">// 你爱我，我爱你，我们一起甜蜜蜜.</span><br />
+			<br>
+			<br>
+			I want to say:<br />
+			My dearest Chen Xiaowei, happy birthday;<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱的陈小薇，这是我们相爱在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					爱你直到永永远远。<br/>
+					<div class="signature">- 葛敏</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		<a href="#">...</a><br />
+		<a href="#">...</a><br />
+		
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2020, 4, 3);
+together.setHours(12);
+together.setMinutes(22);
+together.setSeconds(21);
+together.setMilliseconds(2);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+</body>
+</html>
